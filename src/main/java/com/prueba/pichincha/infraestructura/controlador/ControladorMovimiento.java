@@ -33,8 +33,8 @@ public class ControladorMovimiento {
     }
 
     @GetMapping("/{id}")
-    public Movimiento obtenerMovimientoPorIdentificacion(@PathVariable(name = "idenfiticacion") Long idenfiticacion) {
-        return this.manejadorObtenerMovimientoPorFechaYCliente.ejecutar(idenfiticacion);
+    public Movimiento obtenerMovimientoPorIdentificacion(@PathVariable(name = "identificacion") Long identificacion) {
+        return this.manejadorObtenerMovimientoPorFechaYCliente.ejecutar(identificacion);
     }
 
     @PutMapping

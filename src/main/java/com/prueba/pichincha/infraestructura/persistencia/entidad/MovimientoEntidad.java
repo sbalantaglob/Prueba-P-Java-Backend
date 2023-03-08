@@ -2,8 +2,6 @@ package com.prueba.pichincha.infraestructura.persistencia.entidad;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
 
@@ -11,7 +9,7 @@ import java.time.Instant;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "Movimiento")
+@Table(name = "movimiento")
 public class MovimientoEntidad {
 
     @Id
@@ -25,7 +23,7 @@ public class MovimientoEntidad {
     private Integer saldo;
     @Column(nullable = false)
     private Timestamp fecha;
-    @OneToOne
+    @OneToOne(optional = false)
     private CuentaEntidad cuentaEntidad;
 
     @PrePersist

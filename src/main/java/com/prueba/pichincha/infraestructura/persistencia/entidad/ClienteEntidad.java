@@ -9,21 +9,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "Cliente")
+@Table(name = "cliente")
 public class ClienteEntidad extends PersonaEntidad {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     @Column(nullable = false, length = 50)
     private String contrasena;
     @Column(nullable = false)
     private Boolean estado;
 
-    public ClienteEntidad(Integer idenfiticacion, String nombre, String genero, Integer edad, String direccion, String telefono,
+    public ClienteEntidad(Integer identificacion, String nombre, String genero, Integer edad, String direccion, String telefono,
                           Long id, String contrasena, Boolean estado) {
-        super(idenfiticacion, nombre, genero, edad, direccion, telefono);
-        this.id = id;
+        super(id, identificacion, nombre, genero, edad, direccion, telefono);
         this.contrasena = contrasena;
         this.estado = estado;
     }

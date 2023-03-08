@@ -17,7 +17,7 @@ public final class MovimientoBuilder {
         if (Objects.nonNull(movimientoEntidad) ) {
             movimiento = new Movimiento(movimientoEntidad.getId(),
                     movimientoEntidad.getTipoMovimiento(), movimientoEntidad.getValor(),
-                    movimientoEntidad.getSaldo(), movimientoEntidad.getFecha());
+                    movimientoEntidad.getSaldo(), movimientoEntidad.getFecha(), movimientoEntidad.getCuentaEntidad());
         }
         return movimiento;
     }
@@ -29,6 +29,7 @@ public final class MovimientoBuilder {
         movimientoEntidad.setValor(movimiento.getValor());
         movimientoEntidad.setSaldo(movimiento.getSaldo());
         movimientoEntidad.setFecha(movimiento.getFecha());
+        movimientoEntidad.setCuentaEntidad(movimiento.getCuentaEntidad());
         return movimientoEntidad;
     }
     

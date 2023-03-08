@@ -1,5 +1,6 @@
 package com.prueba.pichincha.aplicacion.dto;
 
+import com.prueba.pichincha.infraestructura.persistencia.entidad.CuentaEntidad;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -18,5 +19,6 @@ public class DtoMovimiento {
     private Integer valor;
     private Integer saldo;
     private Timestamp fecha;
+    private CuentaEntidad cuentaEntidad;
 
 }

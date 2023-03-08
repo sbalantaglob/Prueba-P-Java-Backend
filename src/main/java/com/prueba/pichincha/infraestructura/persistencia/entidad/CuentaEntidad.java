@@ -3,14 +3,14 @@ package com.prueba.pichincha.infraestructura.persistencia.entidad;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "Cuenta")
-public class CuentaEntidad {
+@Table(name = "cuenta")
+public class CuentaEntidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public class CuentaEntidad {
     private Integer saldoInicial;
     @Column(nullable = false)
     private Boolean estado;
-    @OneToOne
+    @OneToOne(optional = false)
     private ClienteEntidad clienteEntidad;
 
 }

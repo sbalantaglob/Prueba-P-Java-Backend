@@ -20,4 +20,10 @@ public class ValidadorArgumento {
         }
     }
 
+    public static void validarLongitud(String valor,int longitud,String mensaje){
+        if(valor.length() < longitud){
+            throw new ExcepcionLongitudValor(mensaje);
+        }
+    }
+
 }

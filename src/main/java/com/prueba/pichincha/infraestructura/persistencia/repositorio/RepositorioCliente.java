@@ -29,9 +29,8 @@ public class RepositorioCliente implements IRepositorioCliente {
 
     @Override
     public Cliente obtenerPorIdentificacion(Long identificacion) {
-       /* ClienteEntidad clienteEntidad = repositorioClienteJPA.findByIdenfiticacion(identificacion);
-        return ClienteBuilder.convertirADominio(clienteEntidad);*/
-        return new Cliente();
+        ClienteEntidad clienteEntidad = repositorioClienteJPA.encontrarPorIdentificacion(identificacion);
+        return ClienteBuilder.convertirADominio(clienteEntidad);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class RepositorioCliente implements IRepositorioCliente {
 
     @Override
     public void eliminar(Long id) {
-        Optional<ClienteEntidad> clienteEntidad = repositorioClienteJPA.findById(id);
+        Optional<ClienteEntidad> clienteEntidad = Optional.of(repositorioClienteJPA.encontrarPorIdentificacion(id));
         repositorioClienteJPA.delete(clienteEntidad.orElseThrow(() ->
                 new ExcepcionSinDatos(MENSAJE_ELIMINAR_NO_EXISTE)));
     }

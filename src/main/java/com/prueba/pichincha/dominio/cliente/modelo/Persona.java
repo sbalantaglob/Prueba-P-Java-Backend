@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Persona {
 
-    private Integer idenfiticacion;
+    private Integer identificacion;
     private String nombre;
     private String genero;
     private Integer edad;

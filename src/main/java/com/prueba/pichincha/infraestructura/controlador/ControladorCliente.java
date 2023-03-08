@@ -34,9 +34,9 @@ public class ControladorCliente {
         return this.manejadorCrearCliente.ejecutar(dtoCliente);
     }
 
-    @GetMapping("/{id}")
-    public Cliente obtenerClientePorIdentificacion(@PathVariable Long idenfiticacion) {
-        return this.manejadorObtenerClientePorIdentificacion.ejecutar(idenfiticacion);
+    @GetMapping("/{identificacion}")
+    public Cliente obtenerClientePorIdentificacion(@PathVariable(name = "identificacion") Long identificacion) {
+        return this.manejadorObtenerClientePorIdentificacion.ejecutar(identificacion);
     }
 
     @PutMapping
@@ -44,9 +44,9 @@ public class ControladorCliente {
         this.manejadorActualizarCliente.ejecutar(dtoCliente);
     }
 
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Long id) {
-        this.manejadorEliminarCliente.ejecutar(id);
+    @DeleteMapping("/{identificacion}")
+    public void eliminar(@PathVariable(name = "identificacion") Long identificacion) {
+        this.manejadorEliminarCliente.ejecutar(identificacion);
     }
 
 }

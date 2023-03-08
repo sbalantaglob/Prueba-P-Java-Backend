@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 public class FabricaCliente {
 
     public Cliente crearCliente(DtoCliente dtoCliente) {
-        return new Cliente(dtoCliente.getIdenfiticacion(), dtoCliente.getNombre(), dtoCliente.getGenero(),
+        return new Cliente(dtoCliente.getIdentificacion(), dtoCliente.getNombre(), dtoCliente.getGenero(),
                 dtoCliente.getEdad(), dtoCliente.getDireccion(), dtoCliente.getTelefono(),
                  dtoCliente.getContrasena(), dtoCliente.getEstado());
     }
 
     public Cliente actualizarCliente(DtoCliente dtoCliente) {
-        return new Cliente(dtoCliente.getId(), dtoCliente.getIdenfiticacion(), dtoCliente.getNombre(), dtoCliente.getGenero(),
+        return new Cliente(dtoCliente.getId(), dtoCliente.getIdentificacion(), dtoCliente.getNombre(), dtoCliente.getGenero(),
                 dtoCliente.getEdad(), dtoCliente.getDireccion(), dtoCliente.getTelefono(),
                 dtoCliente.getContrasena(), dtoCliente.getEstado());
     }

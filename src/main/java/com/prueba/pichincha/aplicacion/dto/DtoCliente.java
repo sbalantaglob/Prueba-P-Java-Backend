@@ -16,9 +16,9 @@ public class DtoCliente extends Persona {
     private String contrasena;
     private Boolean estado;
 
-    public DtoCliente(Long id, Integer idenfiticacion, String nombre, String genero, Integer edad, String direccion, String telefono,
+    public DtoCliente(Long id, Integer identificacion, String nombre, String genero, Integer edad, String direccion, String telefono,
                        String contrasena, Boolean estado) {
-        super(idenfiticacion, nombre, genero, edad, direccion, telefono);
+        super(identificacion, nombre, genero, edad, direccion, telefono);
         this.id = id;
         this.contrasena = contrasena;
         this.estado = estado;

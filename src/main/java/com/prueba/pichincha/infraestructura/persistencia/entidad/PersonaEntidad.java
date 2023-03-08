@@ -1,7 +1,6 @@
 package com.prueba.pichincha.infraestructura.persistencia.entidad;
 
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -9,17 +8,19 @@ import javax.persistence.Entity;
 
 @Getter
 @Setter
-@EqualsAndHashCode
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@MappedSuperclass
 @Inheritance( strategy = InheritanceType.SINGLE_TABLE )
 public class PersonaEntidad {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(unique = true)
-    private Integer idenfiticacion;
-    @Column
+    private Integer identificacion;
+    @Column(nullable = false)
     private String nombre;
     @Column
     private String genero;

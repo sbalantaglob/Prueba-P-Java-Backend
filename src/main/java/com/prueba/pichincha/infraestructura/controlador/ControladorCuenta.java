@@ -35,8 +35,8 @@ public class ControladorCuenta {
     }
 
     @GetMapping("/{id}")
-    public Cuenta obtenerCuentaPorIdentificacion(@PathVariable Long idenfiticacion) {
-        return this.manejadorObtenerCuentaPorNumeroCuenta.ejecutar(idenfiticacion);
+    public Cuenta obtenerCuentaPorIdentificacion(@PathVariable Long identificacion) {
+        return this.manejadorObtenerCuentaPorNumeroCuenta.ejecutar(identificacion);
     }
 
     @PutMapping
