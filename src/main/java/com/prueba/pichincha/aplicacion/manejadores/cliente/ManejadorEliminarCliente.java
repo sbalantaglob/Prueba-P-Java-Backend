@@ -17,6 +17,7 @@ public class ManejadorEliminarCliente {
         this.fabricaCliente = fabricaCliente;
     }
 
+    @Transactional
     public void ejecutar(Long id) {
         this.servicioEliminarCliente.ejecutar(id);
     }

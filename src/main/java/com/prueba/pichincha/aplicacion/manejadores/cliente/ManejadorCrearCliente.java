@@ -5,6 +5,7 @@ import com.prueba.pichincha.aplicacion.fabrica.FabricaCliente;
 import com.prueba.pichincha.dominio.cliente.modelo.Cliente;
 import com.prueba.pichincha.dominio.cliente.servicio.ServicioCrearCliente;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
@@ -18,7 +19,7 @@ public class ManejadorCrearCliente {
         this.fabricaCliente = fabricaCliente;
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.NESTED)
     public Long ejecutar(DtoCliente dtoCliente) {
         Cliente cliente = fabricaCliente.crearCliente(dtoCliente);
         return this.servicioCrearCliente.ejecutar(cliente);

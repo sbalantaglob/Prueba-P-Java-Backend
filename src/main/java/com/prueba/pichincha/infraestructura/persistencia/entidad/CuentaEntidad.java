@@ -23,7 +23,7 @@ public class CuentaEntidad implements Serializable {
     private Integer saldoInicial;
     @Column(nullable = false)
     private Boolean estado;
-    @OneToOne(optional = false)
+    @OneToOne
     private ClienteEntidad clienteEntidad;
 
 }

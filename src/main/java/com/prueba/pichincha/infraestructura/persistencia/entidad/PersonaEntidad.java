@@ -18,9 +18,9 @@ public class PersonaEntidad {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(unique = true)
+    @Column(unique=true)
     private Integer identificacion;
-    @Column(nullable = false)
+    @Column(nullable=false)
     private String nombre;
     @Column
     private String genero;

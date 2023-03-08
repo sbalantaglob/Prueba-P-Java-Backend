@@ -8,6 +8,9 @@ import com.prueba.pichincha.aplicacion.manejadores.movimiento.ManejadorObtenerMo
 import com.prueba.pichincha.dominio.movimiento.modelo.Movimiento;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 @RestController
 @RequestMapping("/movimientos")
 public class ControladorMovimiento {
@@ -32,9 +35,12 @@ public class ControladorMovimiento {
         return this.manejadorCrearMovimiento.ejecutar(dtoMovimiento);
     }
 
-    @GetMapping("/{id}")
-    public Movimiento obtenerMovimientoPorIdentificacion(@PathVariable(name = "identificacion") Long identificacion) {
-        return this.manejadorObtenerMovimientoPorFechaYCliente.ejecutar(identificacion);
+    @GetMapping("/{numeroCuenta}")
+    public List<Movimiento> obtenerMovimientoPorFechasYIdentificacion(
+            @PathVariable(name = "numeroCuenta") Long numeroCuenta,
+            @RequestParam(name = "fechaInicial")Timestamp fechaInicial,
+            @RequestParam(name = "fechaFinal")Timestamp fechaFinal) {
+        return this.manejadorObtenerMovimientoPorFechaYCliente.ejecutar(fechaInicial, fechaFinal, numeroCuenta);
     }
 
     @PutMapping

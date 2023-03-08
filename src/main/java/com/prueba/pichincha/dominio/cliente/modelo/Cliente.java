@@ -1,6 +1,5 @@
 package com.prueba.pichincha.dominio.cliente.modelo;
 
-import com.prueba.pichincha.dominio.cliente.modelo.Persona;
 import com.prueba.pichincha.dominio.excepcion.ValidadorArgumento;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

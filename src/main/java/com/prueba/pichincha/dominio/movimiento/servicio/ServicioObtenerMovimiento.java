@@ -5,6 +5,7 @@ import com.prueba.pichincha.dominio.movimiento.puerto.repositorio.IRepositorioMo
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Component
 public class ServicioObtenerMovimiento {
@@ -15,8 +16,8 @@ public class ServicioObtenerMovimiento {
         this.iRepositorioMovimiento = iRepositorioMovimiento;
     }
 
-    public Movimiento ejecutar(Long identificacion) {
-        return this.iRepositorioMovimiento.obtenerPorCliente(identificacion);
+    public List<Movimiento> ejecutar(Timestamp fechaInicial, Timestamp fechaFinal, Long numeroCuenta) {
+        return this.iRepositorioMovimiento.obtenerPorFechasYCuenta(fechaInicial, fechaFinal, numeroCuenta);
     }
 
 }

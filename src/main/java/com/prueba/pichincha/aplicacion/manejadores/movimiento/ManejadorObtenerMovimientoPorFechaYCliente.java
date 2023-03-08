@@ -6,6 +6,7 @@ import com.prueba.pichincha.dominio.movimiento.servicio.ServicioObtenerMovimient
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Component
 public class ManejadorObtenerMovimientoPorFechaYCliente {
@@ -19,7 +20,7 @@ public class ManejadorObtenerMovimientoPorFechaYCliente {
         this.fabricaMovimiento = fabricaMovimiento;
     }
 
-    public Movimiento ejecutar(Long identificacion) {
-        return this.servicioObtenerMovimiento.ejecutar(identificacion);
+    public List<Movimiento> ejecutar(Timestamp fechaInicial, Timestamp fechaFinal, Long numeroCuenta) {
+        return this.servicioObtenerMovimiento.ejecutar(fechaInicial, fechaFinal, numeroCuenta);
     }
 }

@@ -15,7 +15,7 @@ public final class CuentaBuilder {
     public static Cuenta convertirADominio(CuentaEntidad cuentaEntidad) {
         Cuenta cuenta = new Cuenta();
         if (Objects.nonNull(cuentaEntidad) ) {
-            cuenta = new Cuenta(cuentaEntidad.getId(), cuentaEntidad.getNumeroCuenta(),
+            cuenta = new Cuenta(Objects.nonNull(cuentaEntidad.getId()) ? cuenta.getId() : null, cuentaEntidad.getNumeroCuenta(),
                     cuentaEntidad.getTipoCuenta(), cuentaEntidad.getSaldoInicial(), cuentaEntidad.getEstado(),
                     ClienteBuilder.convertirADominio(cuentaEntidad.getClienteEntidad()));
         }

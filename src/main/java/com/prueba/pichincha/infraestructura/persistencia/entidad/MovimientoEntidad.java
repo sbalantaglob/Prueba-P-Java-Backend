@@ -23,7 +23,7 @@ public class MovimientoEntidad {
     private Integer saldo;
     @Column(nullable = false)
     private Timestamp fecha;
-    @OneToOne(optional = false)
+    @OneToOne
     private CuentaEntidad cuentaEntidad;
 
     @PrePersist

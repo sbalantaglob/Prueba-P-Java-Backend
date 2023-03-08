@@ -3,8 +3,6 @@ package com.prueba.pichincha.aplicacion.dto;
 import com.prueba.pichincha.dominio.cliente.modelo.Cliente;
 import lombok.*;
 
-import java.math.BigDecimal;
-
 @Getter
 @Setter
 @EqualsAndHashCode

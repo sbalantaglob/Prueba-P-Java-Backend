@@ -14,7 +14,13 @@ public interface IRepositorioClienteJPA extends JpaRepository<ClienteEntidad, Lo
 
     Optional<ClienteEntidad> findById(Long id);
 
-    @Query("SELECT c FROM ClienteEntidad c WHERE  c.identificacion = :identificacion")
-    ClienteEntidad encontrarPorIdentificacion(@Param("identificacion") Long identificacion);
+    @Query("SELECT c FROM ClienteEntidad c WHERE c.identificacion = :identificacion ORDER BY c.identificacion DESC LIMIT 1")
+    Optional<ClienteEntidad> encontrarPorIdentificacion(@Param("identificacion") Long identificacion);
+
+    @Query("SELECT COUNT(c) > 0 FROM ClienteEntidad c WHERE c.identificacion = ?1")
+    Boolean existePorIdentificacion(Integer identificacion);
+
+    @Query("SELECT COUNT(c) > 0 FROM ClienteEntidad c WHERE c.id = ?1 AND c.identificacion = ?2")
+    Boolean existePorIdYIdentificacion(Long id, Integer identificacion);
 
 }

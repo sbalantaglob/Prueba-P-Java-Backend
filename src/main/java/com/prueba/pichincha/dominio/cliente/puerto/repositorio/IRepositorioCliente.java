@@ -12,4 +12,8 @@ public interface IRepositorioCliente {
 
     void eliminar(Long id);
 
+    Boolean existePorIdentificacion(Integer identificacion);
+
+    Boolean existeClientePorIdYIdentificacion(Long id, Integer identificacion);
+
 }

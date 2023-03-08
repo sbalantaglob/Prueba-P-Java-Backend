@@ -9,6 +9,6 @@ public class FabricaMovimiento {
 
     public Movimiento crearMovimiento(DtoMovimiento dtoMovimiento) {
         return new Movimiento(dtoMovimiento.getTipoMovimiento(), dtoMovimiento.getValor(),
-                dtoMovimiento.getSaldo(), dtoMovimiento.getFecha());
+                dtoMovimiento.getSaldo(), dtoMovimiento.getFecha(), dtoMovimiento.getCuenta());
     }
 }

@@ -6,10 +6,12 @@ public interface IRepositorioCuenta {
 
     Long guardar(Cuenta cuenta);
 
-    Cuenta obtenerPorNumeroCuenta(Long identificacion);
+    Cuenta obtenerPorNumeroCuenta(Long numeroCuenta);
 
     void actualizar(Cuenta cliente);
 
     void eliminar(Long id);
+
+    Boolean existePorNumeroCuenta(Long numeroCuenta);
 
 }

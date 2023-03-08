@@ -3,6 +3,7 @@ package com.prueba.pichincha.infraestructura.error;
 import com.prueba.pichincha.dominio.excepcion.ExcepcionSinDatos;
 import com.prueba.pichincha.dominio.excepcion.ExcepcionSinSaldo;
 import com.prueba.pichincha.dominio.excepcion.ExcepcionValorObligatorio;
+import com.prueba.pichincha.dominio.excepcion.ExcepcionYaExiste;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,6 +24,7 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
         CODIGOS_ESTADO.put(ExcepcionSinSaldo.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODIGOS_ESTADO.put(ExcepcionValorObligatorio.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODIGOS_ESTADO.put(ExcepcionSinDatos.class.getSimpleName(), HttpStatus.NOT_FOUND.value());
+        CODIGOS_ESTADO.put(ExcepcionYaExiste.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
     }
 
 
